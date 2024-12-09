@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Activity</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="body">
+           <div class="text">
+               <p>Sign Up and Log In Form</p>
+           </div>
+   <div class="sentence">
+           <div class="text">
+               <p>PLEASE SIGN UP TO CREATE ACCOUNT</p>
+           </div>
+    
+    <form action="">
+        <table>
+            <tr>
+                <td>
+                    Username:
+                </td>
+                <td>
+                    <input type="text" name="" id="txt_username" placeholder="Username" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password:
+                </td>
+                <td>
+                    <input type="password" name="" id="txt_password" placeholder="Password" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="signup()">SIGN UP</button>
+                </td>
+            </tr>
+        </table>
+    
+    </form>
+    <br>
+    <div class="sentence">
+           <div class="text">
+               <p>PLEASE ENTER AN ACCOUNT TO LOG IN</p>
+           </div>
+    <form action="">
+        <table>
+            <tr>
+                <td>
+                    Username:
+                </td>
+                <td>
+                    <input type="text" name="" id="txt_user" placeholder="Username" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password:
+                </td>
+                <td>
+                    <input type="password" name="" id="txt_password1" placeholder="Password" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="logIn()">LOG IN</button>
+                </td>
+            </tr>
+        </table>
+    
+    </form>
+    
+</body>
+</html>
+<script>
+    function signup(){
+        const user=document.getElementById("txt_username").value;
+               const password=document.getElementById("txt_password").value;
+        if(user&&password!=""){
+        alert("Username is:"+user);
+        alert("Password is:"+password);
+        const data= JSON.parse(localStorage.getItem('data'))|| [];
+        data.push({
+            username: user,
+            pass:password
+        })
+        localStorage.setItem('data', JSON.stringify(data));
+        console.log();
+        }else{
+            alert("Lihog Completo!")
+        }
+        
+        
+    }
+    function logIn(){
+        const username= document.getElementById("txt_user").value;
+        const password= document.getElementById("txt_password1").value;
+        const users= JSON.parse(localStorage.getItem('users'))||[];
+        const user= users.find(user=> user.username=== username && user.password);
+        if (user){
+            alert("Log In Successfully!");
+            console.log("Logged in user:",username);
+        }else{
+            alert("Invalid credentials");
+            console.log("No matching user found");
+        }
+        
+    }
+</script>

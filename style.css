@@ -1,0 +1,46 @@
+body{
+    background-color: #83A6CE;
+    font-family: Times New Roman;
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    font-weight:bold;
+}
+form {
+    font-family: Arial, sans-serif;
+    background-color:#83A6CE;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;            
+    height: 100v;
+    font-weight: normal;
+    font-size:20px;
+ 
+}
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+}
+button {
+    width: 120%;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 7px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+input::placeholder {
+    color: black;
+    font-size: 14px;
+}
+.sentence{
+    font-size:15px;
+    font-family: arial;
+    font-weight: normal;
+}
